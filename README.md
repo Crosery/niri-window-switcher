@@ -1,0 +1,72 @@
+# Niri Window Switcher
+
+**English** | **[中文](README_ZH.md)**
+
+A modern window switcher for Niri Wayland compositor built with GTK4 and Layer Shell.
+
+![Screenshot](demo.png)
+
+## Features
+
+- Fuzzy search with smart ranking
+- Full keyboard navigation
+- Glassmorphism UI design
+- Customizable via config files
+- Fast and lightweight
+
+## Installation
+
+```bash
+cargo build --release
+cp target/release/niri-switcher ~/.local/bin/niri-window-switcher
+```
+
+Add to `~/.config/niri/binds.kdl`:
+
+```kdl
+binds {
+    Alt+Tab repeat=false { spawn "niri-window-switcher"; }
+}
+```
+
+## Configuration
+
+### Window Size (Optional)
+
+Create `~/.config/niri-window-switcher/config.toml`:
+
+```toml
+[window]
+width = 680
+height = 520
+```
+
+### Custom Styling (Optional)
+
+Copy and customize the default style:
+
+```bash
+mkdir -p ~/.config/niri-window-switcher
+cp style.css ~/.config/niri-window-switcher/style.css
+# Edit ~/.config/niri-window-switcher/style.css
+```
+
+The CSS file uses standard GTK4 CSS syntax. Key selectors:
+
+- `window` - Main window background and border
+- `entry` - Search input box
+- `row` - Window list items
+- `row:selected` - Selected item
+- `label` - Text styling
+
+## Keyboard Shortcuts
+
+- Type to search
+- `↑`/`↓` or `Ctrl+P`/`Ctrl+N` to navigate
+- `Enter` to select
+- `1-9` for quick select
+- `Esc` to cancel
+
+## License
+
+MIT
