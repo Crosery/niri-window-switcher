@@ -16,12 +16,28 @@ A modern window switcher for Niri Wayland compositor built with GTK4 and Layer S
 
 ## Installation
 
+One-line install (no dependencies required, Alt+Tab ready out of the box):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Crosery/niri-window-switcher/main/install.sh | bash
+```
+
+Supported distros: Arch / Manjaro / EndeavourOS / CachyOS / Debian / Ubuntu / Mint / Pop!_OS / Fedora / Nobara / openSUSE
+
+Uninstall:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Crosery/niri-window-switcher/main/install.sh | bash -s -- --uninstall
+```
+
+### Manual Build
+
 ```bash
 cargo build --release
 cp target/release/niri-switcher ~/.local/bin/niri-window-switcher
 ```
 
-Add to `~/.config/niri/binds.kdl`:
+For manual install, add keybinding to `~/.config/niri/binds.kdl`:
 
 ```kdl
 binds {

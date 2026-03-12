@@ -16,12 +16,28 @@
 
 ## 安装
 
+一行命令安装（零环境依赖，安装后 Alt+Tab 直接可用）：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Crosery/niri-window-switcher/main/install.sh | bash
+```
+
+支持发行版：Arch / Manjaro / EndeavourOS / CachyOS / Debian / Ubuntu / Mint / Pop!_OS / Fedora / Nobara / openSUSE
+
+卸载：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Crosery/niri-window-switcher/main/install.sh | bash -s -- --uninstall
+```
+
+### 手动编译
+
 ```bash
 cargo build --release
 cp target/release/niri-switcher ~/.local/bin/niri-window-switcher
 ```
 
-在 `~/.config/niri/binds.kdl` 添加：
+手动安装需要自行配置键位绑定，在 `~/.config/niri/binds.kdl` 中添加：
 
 ```kdl
 binds {
